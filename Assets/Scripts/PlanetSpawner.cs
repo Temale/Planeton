@@ -22,8 +22,9 @@ public class PlanetSpawner : MonoBehaviour {
 		int planetIndex = Random.Range (0, planetPrefabs.Length); 
 		GameObject planetPrefabToSpawn =planetPrefabs [planetIndex];
 
-		Instantiate (planetPrefabToSpawn, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity) ; 
+		GameObject newPlanet = Instantiate (planetPrefabToSpawn, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity) ; 
 
-//		SettingVelocity(); 
+		newPlanet.GetComponent <PlanetPrefabMovement> ().SettingVelocity (); 
+	
 	}
 }

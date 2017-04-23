@@ -13,10 +13,13 @@ public class PlanetPrefabMovement : MonoBehaviour {
 	}
 
 	public void SettingVelocity () {
-		rangeX = Random.Range (-0.09f, -0.9f); 
+		rangeX = Random.Range (-0.2f, -0.06f); 
 
 		velocity = new Vector3 (rangeX, 0f, 0f); 
+	
+	}
 
+	void Update () {
 		transform.Translate (velocity); 
 	}
 

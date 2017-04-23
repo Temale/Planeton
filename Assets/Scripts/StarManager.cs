@@ -14,10 +14,10 @@ public class StarManager : MonoBehaviour {
 
 	void SpawnNext() {
 		// Instantiate
-		GameObject g =(GameObject)Instantiate(prefab, transform.position, Quaternion.identity);
+		GameObject newStar =(GameObject)Instantiate(prefab, transform.position, Quaternion.identity);
 
 		// Set Velocity
-		g.GetComponent<Rigidbody2D>().velocity = velocity;
+		newStar.GetComponent<Rigidbody2D>().velocity = velocity;
 	}
 		
 }
