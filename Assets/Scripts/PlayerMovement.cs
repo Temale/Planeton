@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour {
 		if(gameManager == null) {
 			Debug.Log("Cannot find 'GameManager' script");
 		}
+			
 	}
 
 	void FixedUpdate () {
@@ -58,6 +59,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (other.tag == "Stars") { 
 			gameManager.AddScore(scoreValue);
 			Destroy (other.gameObject);
+
 
 //			gameObject.GetComponent <GameManager>().AddScore(scoreValue);
 //			Score sn = gameObject.GetComponent<ScriptName>() sn.DoSomething();
