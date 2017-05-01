@@ -14,7 +14,7 @@ public class PlanetSpawner : MonoBehaviour {
 
 	void Update () {
 		
-		interval = Random.Range (0.5f, 1f); 
+		interval = Random.Range (1f, 5f); 
 	}
 
 	public void SpawnNext() {
