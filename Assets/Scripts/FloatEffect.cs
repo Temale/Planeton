@@ -21,7 +21,5 @@ public class FloatEffect : MonoBehaviour {
 	void Update () {
 		var newY = startY + (startY + Mathf.Cos(Time.time/ duration * 2 )) / .1f;
 		rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, newY);
-
-		
 	}
 }

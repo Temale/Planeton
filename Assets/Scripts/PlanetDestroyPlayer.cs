@@ -4,13 +4,36 @@ using UnityEngine;
 
 public class PlanetDestroyPlayer : MonoBehaviour {
 
-	AudioSource planetAudioSource; 
+	private GameManager gameManager;
+
+	public AudioSource planetAudioSource; 
 
 	public AudioClip planetCollision; 
 
+    void Start (){
+		GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
+
+		if (gameManagerObject != null)
+		{
+			gameManager = gameManagerObject.GetComponent<GameManager>();
+		}
+		if (gameManager == null)
+		{
+			Debug.Log("Cannot find 'GameManager' script");
+		}
+    }
+
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player") {
-			Destroy (other.gameObject); 
+
+            planetAudioSource.clip = planetCollision;
+			planetAudioSource.Play();
+
+            Destroy (other.gameObject);
+
+            gameManager.GameOver();
+
+
 		}
 
 		if (other.tag == "Shredder") {
